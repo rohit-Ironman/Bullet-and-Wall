@@ -15,6 +15,8 @@ function setup() {
  
   bullet.velocityX = speed;
  
+bullet.shapeColor = color("black");
+
 }
 
 function draw() {
@@ -25,11 +27,11 @@ function draw() {
     var damage = 0.5 * weight * speed/(thickness *thickness *thickness);
 
     if(damage>10){
-      wall.shapeColor = color(255,0,0);
+      wall.shapeColor = rgb(255,0,0);
     }
 
     if(damage<10){
-      wall.shapeColor = color(0,255,0);
+      wall.shapeColor = rgb(0,255,0);
     }
 
   }
@@ -40,7 +42,7 @@ function draw() {
 function hasCollided(lbullet, lwall){
   bulletRightEdge = lbullet.x + lbullet.width;
   lwallLeftEdge = lwall.x; 
-  if(bullet.RightEdge>=wallLeftEdge){
+  if(bullet.RightEdge>=lwallLeftEdge){
     return true;
   }
   return false;

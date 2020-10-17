@@ -42,7 +42,7 @@ function draw() {
 function hasCollided(lbullet, lwall){
   bulletRightEdge = lbullet.x + lbullet.width;
   lwallLeftEdge = lwall.x; 
-  if(bullet.RightEdge>=lwallLeftEdge){
+  if(bulletRightEdge>=lwallLeftEdge){
     return true;
   }
   return false;
